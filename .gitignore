@@ -1,0 +1,101 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+
+# 가상환경
+venv/
+env/
+.venv/
+ENV/
+
+# 모델 체크포인트 및 가중치 (GitHub에 업로드하지 않음 - 용량이 너무 큼)
+checkpoints/
+model/InternVL2_8B/*.safetensors
+model/InternVL2_8B/*.bin
+model/InternVL2_8B/*.pt
+model/InternVL2_8B/*.pth
+model/InternVL2_8B/*.ckpt
+*.pt
+*.pth
+*.ckpt
+
+# 출력 및 업로드 파일
+outputs/
+uploads/
+ChatGarment/outputs/
+ChatGarment/uploads/
+ChatGarment/runs/
+
+# 로그 파일
+*.log
+*.log.*
+*.jsonl
+test_output.txt
+api_server_log.txt
+browser_test_result_*.json
+test_*_response.json
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# IDE 및 에디터
+.vscode/
+.idea/
+*.code-workspace
+*.swp
+.DS_Store
+
+# 환경 변수 (민감 정보 포함 가능)
+.env
+.env.local
+.env.*.local
+
+# 임시 파일
+*.tmp
+*.temp
+GNU nano *.txt
+*_test_result_*.json
+
+# 컴파일된 바이너리
+*.dll
+*.so
+*.dylib
+
+# ChatGarment 제외 항목
+ChatGarment/assets/
+ChatGarment/playground/
+ChatGarment/serve_images/
+
+# GarmentCodeRC 제외 항목
+GarmentCodeRC/Logs*/
+GarmentCodeRC/output*
+GarmentCodeRC/try_imgs/
+GarmentCodeRC/try_imgs2/
+GarmentCodeRC/summaryfolder/
+GarmentCodeRC/system.json
+
+# 문서 및 기타 (선택적 제외)
+*.pdf
+pdf_extracted_text.txt
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+# 테스트 결과 파일
+test_response.json
+test_3d_fix_response.json
+browser_test_result_*.json
+

@@ -1,0 +1,111 @@
+.image-upload {
+  width: 100%;
+  position: relative;
+}
+
+.upload-label {
+  display: block;
+  cursor: pointer;
+}
+
+.upload-area {
+  border: 2px dashed rgba(167, 139, 250, 0.4);
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  background: rgba(10, 10, 10, 0.5);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.upload-area::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center,
+    rgba(167, 139, 250, 0.1) 0%,
+    transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.upload-area:hover::before {
+  opacity: 1;
+}
+
+.upload-area:hover:not(.disabled) {
+  border-color: rgba(167, 139, 250, 0.7);
+  background: rgba(10, 10, 10, 0.7);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.2),
+              inset 0 0 30px rgba(167, 139, 250, 0.05);
+  transform: translateY(-2px);
+}
+
+.upload-area.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.upload-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 10px rgba(167, 139, 250, 0.5));
+  position: relative;
+  z-index: 1;
+}
+
+.upload-area p {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0.5rem 0;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+
+.upload-hint {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.image-preview {
+  position: relative;
+  width: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.preview-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.remove-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.remove-button:hover {
+  background: white;
+  transform: scale(1.1);
+}
+

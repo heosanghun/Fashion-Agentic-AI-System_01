@@ -1,0 +1,30 @@
+# Fashion Agentic AI System - Requirements
+
+# FastAPI 및 서버
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+
+# 데이터 검증
+pydantic>=2.0.0
+
+# 이미지 처리
+Pillow>=10.0.0
+opencv-python>=4.8.0
+
+# PyTorch 및 딥러닝
+torch>=2.0.0
+transformers>=4.37.2
+
+# Vector DB 및 RAG (선택사항)
+chromadb>=0.4.0
+faiss-cpu>=1.7.4
+sentence-transformers>=2.2.0
+
+# 기타 유틸리티
+python-dateutil>=2.8.2
+numpy>=1.24.0
+
+# 개발 도구
+pytest>=7.4.0
+black>=23.0.0

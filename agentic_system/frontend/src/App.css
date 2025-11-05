@@ -1,0 +1,314 @@
+.app {
+  min-height: 100vh;
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.app-header {
+  text-align: center;
+  color: white;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.app-header h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 30px rgba(167, 139, 250, 0.3);
+}
+
+.app-header p {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+.app-container {
+  position: relative;
+  z-index: 1;
+}
+
+.app-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.input-section {
+  background: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+              0 0 40px rgba(139, 92, 246, 0.1),
+              inset 0 0 30px rgba(167, 139, 250, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.input-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%,
+    rgba(167, 139, 250, 0.5) 50%,
+    transparent 100%);
+}
+
+.input-group {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+}
+
+.input-group textarea {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: rgba(10, 10, 10, 0.7);
+  border: 2px solid rgba(167, 139, 250, 0.3);
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  resize: vertical;
+  font-family: inherit;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.1),
+              inset 0 0 20px rgba(167, 139, 250, 0.05);
+}
+
+.input-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.input-group textarea:focus {
+  outline: none;
+  border-color: rgba(167, 139, 250, 0.8);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.3),
+              0 0 0 3px rgba(167, 139, 250, 0.1),
+              inset 0 0 30px rgba(167, 139, 250, 0.1);
+}
+
+.input-group textarea:hover:not(:focus) {
+  border-color: rgba(167, 139, 250, 0.5);
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.15);
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.submit-button,
+.clear-button {
+  flex: 1;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.03em;
+}
+
+.submit-button {
+  background: linear-gradient(135deg, 
+    rgba(167, 139, 250, 0.9) 0%, 
+    rgba(139, 92, 246, 0.9) 100%);
+  color: white;
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.4),
+              0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent);
+  transition: left 0.5s;
+}
+
+.submit-button:hover:not(:disabled)::before {
+  left: 100%;
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.6),
+              0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.submit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: rgba(100, 100, 100, 0.3);
+}
+
+.clear-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.clear-button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(167, 139, 250, 0.5);
+  transform: translateY(-2px);
+}
+
+.clear-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error-message {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #fee;
+  color: #c33;
+  border-radius: 0.5rem;
+  border-left: 4px solid #c33;
+}
+
+.result-section {
+  background: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+              0 0 40px rgba(139, 92, 246, 0.1);
+  min-height: 400px;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.error-section {
+  background: rgba(220, 38, 38, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  margin-top: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.error-section h3 {
+  color: rgba(248, 113, 113, 0.9);
+  margin-bottom: 0.5rem;
+}
+
+.status-section {
+  margin-top: 2rem;
+}
+
+.image-preview {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(10, 10, 10, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+}
+
+.image-preview p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.image-preview img {
+  border-radius: 0.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3),
+              0 0 10px rgba(139, 92, 246, 0.2);
+}
+
+.app-footer {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 4rem;
+  padding-top: 2rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.logo-image {
+  max-width: 200px;
+  height: auto;
+  object-fit: contain;
+}
+
+.footer-divider {
+  width: 100%;
+  max-width: 600px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0 auto 1.5rem;
+}
+
+.app-footer p {
+  margin: 0;
+}
+
+@media (max-width: 968px) {
+  .app {
+    padding: 2rem 1rem;
+  }
+  
+  .app-main {
+    grid-template-columns: 1fr;
+  }
+  
+  .app-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .app-header p {
+    font-size: 1.1rem;
+  }
+  
+  .input-section {
+    padding: 2rem 1.5rem;
+  }
+}
+
